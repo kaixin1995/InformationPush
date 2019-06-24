@@ -9,6 +9,6 @@
 微信测试推送:http://域名/weixin.php?msg=测试提交  
 企业微信测试推送:http://域名/work.php?msg=测试提交  
 
-[微信推送说明](https://github.com/kaixin1995/InformationPush/blob/master/weixin.md)  |  [企业微信推送说明](https://github.com/kaixin1995/InformationPush/blob/master/work.md)   
+[微信推送说明](https://github.com/kaixin1995/InformationPush/blob/master/readme/weixin.md)  |  [企业微信推送说明](https://github.com/kaixin1995/InformationPush/blob/master/readme/work.md)   
 
 ### 代码其实很简单，没有什么技术难度，本来想到网上找一个直接用的，找了许久都没找到一个合适的，所以就借助强大的搜索引擎来写一个，提醒页面做的特别粗糙，因为美工无力，就这也是强行扒别人的。
