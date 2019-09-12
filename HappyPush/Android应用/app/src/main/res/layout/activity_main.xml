@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/Tips1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="60px"
+        android:text="提交接口为:"/>
+
+    <EditText
+        android:id="@+id/url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Tips1"
+        android:text=""
+        android:textSize="60px" />
+
+
+    <TextView
+        android:id="@+id/Msg"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/url"
+        android:layout_height="wrap_content"
+        android:textSize="60px"
+        android:text="本软件只供娱乐，切勿用于非法用途。"/>
+
+    <Button
+        android:id="@+id/ComeBack"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/Msg"
+        android:layout_height="wrap_content"
+        android:text="重新获取唯一值"/>
+
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_below="@+id/ComeBack"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+
+
+</RelativeLayout>
