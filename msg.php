@@ -8,23 +8,25 @@ if(!isset($_REQUEST['title'])||!isset($_REQUEST['time'])||!isset($_REQUEST['msg'
 ?>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="robots" content="noindex,noarchive,nofollow">
         <title><?php echo $_REQUEST['title'];?></title>
-        
+        <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <style>
-        .jumbotron{padding:30px;margin-bottom:30px;color:inherit;background-color:#ecf0f1}
-        .jumbotron p{margin-bottom:15px;font-size:23px;font-weight:200}
-        .jumbotron>hr{border-top-color:#cfd9db}
-        .container .jumbotron{border-radius:6px}.jumbotron 
-        .container{max-width:100%}@media screen and (min-width:768px){.jumbotron{padding-top:48px;padding-bottom:48px}
-        .container .jumbotron{padding-left:60px;padding-right:60px}
-    
-        </style>
-    
-    <h1 style="color: #3290E2;"><?php echo $_REQUEST['title'];?></h1>
-    <hr />
-    <div class="jumbotron">
-      <h2><?php echo $_REQUEST['msg'];?></h2>
-      <p>提醒时间:<?php echo $_REQUEST['time'];?></p>
+        .card{
+            box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+        }
+    </style>
+
+    <div class="container mt-3 mt-md-5">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><?php echo $_REQUEST['title'];?></h5>
+                <p class="card-subtitle mb-2 text-muted"><?php echo $_REQUEST['time'];?></p>
+                <p class="card-text"><?php echo $_REQUEST['msg'];?></p>
+            </div>
+        </div>
     </div>
+
 </html>
