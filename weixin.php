@@ -1,5 +1,7 @@
 <?php
 date_default_timezone_set('PRC');
+ini_set('session.gc_maxlifetime', "18000"); // 5小时  
+ini_set("session.cookie_lifetime","18000"); // 5小时  
 
 //如果不存在文本就禁止提交
 if(!isset($_REQUEST['msg']))
@@ -57,8 +59,24 @@ function https_request($url, $data = null)
  * 开始推送
  */
 
-//替换你的ACCESS_TOKEN
-$ACCESS_TOKEN = json_decode(https_request("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=替换自己的APPID&secret=替换自己的APPSECRET"),true)["access_token"];
+ if(!session_id()){
+       session_start();
+ }
+$ACCESS_TOKEN ='';
+if (isset($_SESSION['WXACCESS_TOKEN'])) 
+{
+    //存在
+    $ACCESS_TOKEN =$_SESSION['WXACCESS_TOKEN'];
+    echo '从缓存中获取的ACCESS_TOKEN';
+}
+else
+{
+    //替换你的ACCESS_TOKEN
+    $ACCESS_TOKEN = json_decode(https_request("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=替换自己的APPID&secret=替换自己的APPSECRET"),true)["access_token"];
+    $_SESSION['WXACCESS_TOKEN']=$ACCESS_TOKEN;
+    echo '重获取的ACCESS_TOKEN';
+}
+
 //模板消息请求URL
 $url = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=" . $ACCESS_TOKEN;
 $MsgArray=array();
